@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TTS Playground
 
-## Getting Started
+A modern playground for experimenting with Text-to-Speech (TTS) features, built with Next.js, TypeScript, Tailwind CSS, and Shadcn UI. This project demonstrates best practices in code structure, styling, and component design, following the Airbnb Style Guide and custom conventions.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Language:** TypeScript
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [Shadcn UI](https://ui.shadcn.com/)
+- **Linting & Style:** Airbnb Style Guide
+
+## 📁 Directory Structure
+
+```
+app-playground/
+├── src/
+│   ├── components/    # Reusable React components (PascalCase files)
+│   ├── pages/         # Next.js pages
+│   ├── styles/        # Tailwind CSS config and global styles
+│   └── ...
+├── public/            # Static assets
+├── README.md
+├── package.json
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Setup & Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-## Learn More
+3. **Build for production:**
+   ```bash
+   npm run build
+   npm start
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## 🧑‍💻 Code Style & Conventions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Component Naming:** PascalCase for files and components (e.g., `Header.tsx`)
+- **Exports:** Named export per file
+- **Types:** Always declare types for variables, parameters, and return values. Avoid `any`.
+- **Styling:** Use Tailwind CSS utility classes and Shadcn UI components
+- **Immutability:** Prefer `readonly` and `as const` for immutable data
+- **Functions:** Short, single-purpose, <20 lines; use arrow functions for simple logic
+- **RO-RO:** Receive Object, Return Object for multi-parameter functions
+- **No magic numbers:** Use named constants
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Pull requests are welcome! Please follow the code style and conventions outlined above.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE)
