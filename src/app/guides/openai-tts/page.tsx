@@ -28,6 +28,16 @@ const OpenaiTtsGuide: FC = () => {
         >
           {"OpenAI TTS Documentation"}
         </Link>
+
+        <Link
+          className="text-blue-600 hover:underline font-medium"
+          href={"https://openai.fm/"}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="OpenAI.fm"
+        >
+          OpenAI.fm - Interactive TTS Demo
+        </Link>
       </section>
       <footer className="mt-12">
         <Link href="/guides" className="text-blue-600 hover:underline font-medium">
