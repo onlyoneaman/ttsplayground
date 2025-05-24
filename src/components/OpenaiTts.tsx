@@ -20,7 +20,7 @@ import { VOICES, MODELS, PRICES_PER_MILLION, INPUT_PRICES_PER_MILLION } from "@/
 import type { TtsDemoProps, TtsConfig } from "@/types/types";
 import { blobToBase64, base64ToBlob, generateCacheKey, splitText, fetchAndConcatenateAudio } from "@/helpers/openai-helpers";
 
-const TtsDemo: FC<TtsDemoProps> = ({ className }) => {
+const OpenaiTts: FC<TtsDemoProps> = ({ className }) => {
   const [blob, setBlob] = useState<Blob | null>(null);
   const [text, setText] = useState<string>("");
   const [audioUrl, setAudioUrl] = useState<string>("");
@@ -284,4 +284,4 @@ const TtsDemo: FC<TtsDemoProps> = ({ className }) => {
   );
 };
 
-export { TtsDemo };
+export { OpenaiTts };

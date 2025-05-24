@@ -1,10 +1,10 @@
 import type { FC } from "react";
-import { TtsDemo } from "@/components/TtsDemo";
+import { OpenaiTts } from "@/components/OpenaiTts";
 
 const Home: FC = () => {
   return (
     <section className="flex flex-col items-center justify-center w-full h-full">
-      <TtsDemo />
+      <OpenaiTts />
     </section>
   );
 };
