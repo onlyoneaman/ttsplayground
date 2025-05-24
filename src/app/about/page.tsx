@@ -2,12 +2,6 @@ import type { FC } from "react";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-/**
- * About Us page for TTS Playground
- * Modern playground for experimenting with Text-to-Speech (TTS) features.
- * Built with Next.js, TypeScript, Tailwind CSS, and Shadcn UI.
- */
-
 const AboutPage: FC = () => {
   return (
     <main className={cn("flex flex-col items-center justify-center min-h-screen bg-background p-6")}> 
