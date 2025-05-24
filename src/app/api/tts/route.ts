@@ -13,6 +13,7 @@ interface TtsResponse {
 
 // Mocked TTS synthesis for demo purposes
 export async function POST(req: NextRequest): Promise<NextResponse<TtsResponse>> {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { text, provider } = (await req.json()) as TtsRequest;
   // TODO: Integrate real provider APIs here
   // For demo, return a placeholder audio file

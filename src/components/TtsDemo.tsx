@@ -13,6 +13,10 @@ const PROVIDERS = [
   { label: "11labs", value: "11labs" },
 ] as const;
 
+export type TtsApiResponse = {
+  audioUrl: string;
+};
+
 export type TtsDemoProps = {
   readonly className?: string;
 };
@@ -39,7 +43,7 @@ const TtsDemo: FC<TtsDemoProps> = ({ className }) => {
         body: JSON.stringify({ text, provider }),
       });
       if (!res.ok) throw new Error("Failed to synthesize speech");
-      const data = await res.json();
+      const data: TtsApiResponse = await res.json();
       setAudioUrl(data.audioUrl);
     } catch (err) {
       setError((err as Error).message);
