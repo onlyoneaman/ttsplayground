@@ -34,6 +34,12 @@ const Header: FC<HeaderProps> = ({ className }) => {
           </Button>
         </Link>
         <Link
+          href="/guides"
+          className="text-sm font-medium underline underline-offset-2 hover:text-primary transition-colors ml-4"
+        >
+          Guides
+        </Link>
+        <Link
           href="/about"
           className="text-sm font-medium underline underline-offset-2 hover:text-primary transition-colors ml-4"
         >
