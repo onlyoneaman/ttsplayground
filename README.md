@@ -75,9 +75,15 @@ Pull requests are welcome! Please follow the code style and conventions outlined
 - Add tests for new features or bug fixes
 - Keep documentation up to date
 
-## 🙋‍♂️ Author
+## Author
 
-Made by [Aman](https://github.com/onlyoneaman)
+Made by [Aman](https://github.com/onlyoneaman) [amankumar.ai](https://amankumar.ai)
+
+## 🙋‍♂️ Feedback
+
+Have a feature request or found a bug? [Open an issue](https://github.com/onlyoneaman/ttsplayground/issues) on GitHub for:
+- Feature requests
+- Bug reports
 
 ## 📄 License
 

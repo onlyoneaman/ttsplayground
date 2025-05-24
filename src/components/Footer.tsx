@@ -22,6 +22,25 @@ const Footer: FC<FooterProps> = ({ className }) => {
           Aman
         </a>
       </span>
+      <span className="inline-flex items-center gap-3 mt-1">
+        <a
+          href="https://github.com/onlyoneaman/ttsplayground/issues/new?labels=feature&template=feature_request.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:text-primary transition-colors"
+        >
+          Feature request
+        </a>
+        <span aria-hidden="true">|</span>
+        <a
+          href="https://github.com/onlyoneaman/ttsplayground/issues/new?labels=bug&template=bug_report.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:text-primary transition-colors"
+        >
+          Report a bug
+        </a>
+      </span>
     </footer>
   );
 };
