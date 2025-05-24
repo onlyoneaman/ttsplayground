@@ -1,6 +1,10 @@
 # TTS Playground
 
+> ⭐️ If you find this project useful, please consider [starring it on GitHub](https://github.com/onlyoneaman/ttsplayground) and sharing it with others!
+
 A modern playground for experimenting with Text-to-Speech (TTS) features, built with Next.js, TypeScript, Tailwind CSS, and Shadcn UI. This project demonstrates best practices in code structure, styling, and component design, following the Airbnb Style Guide and custom conventions.
+
+This project is **Open Source** and hosted at [ttsplayground.com](https://ttsplayground.com/).
 
 ## 🚀 Tech Stack
 
@@ -62,6 +66,18 @@ app-playground/
 ## 🤝 Contributing
 
 Pull requests are welcome! Please follow the code style and conventions outlined above.
+
+### Open Source Best Practices
+- Write clear, descriptive commit messages
+- Open issues for bugs or feature requests
+- Use pull requests for all contributions
+- Follow the code of conduct
+- Add tests for new features or bug fixes
+- Keep documentation up to date
+
+## 🙋‍♂️ Author
+
+Made by [Aman](https://github.com/onlyoneaman)
 
 ## 📄 License
 
