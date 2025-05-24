@@ -10,14 +10,26 @@ export type Guide = {
 
 const guides: readonly Guide[] = [
   {
+    id: "tts-providers",
+    title: "TTS Providers",
+    description: "Overview of different Text-to-Speech (TTS) providers and their features.",
+    href: "/guides/tts-providers",
+  },
+  {
     id: "openai-tts",
     title: "OpenAI TTS",
     description: "How to use OpenAI's Text-to-Speech (TTS) API in your projects.",
     href: "/guides/openai-tts",
   },
+  // {
+  //   id: "groq-tts",
+  //   title: "Groq TTS",
+  //   description: "How to use Groq's Text-to-Speech (TTS) API in your projects.",
+  //   href: "/guides/groq-tts",
+  // },
 ];
 
-export function GuidesPage(): JSX.Element {
+function GuidesPage() {
   return (
     <div className="max-w-2xl mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold mb-8">Guides</h1>
