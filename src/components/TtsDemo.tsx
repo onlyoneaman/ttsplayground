@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, ChangeEvent, FormEvent } from "react";
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -188,7 +188,22 @@ const TtsDemo: FC<TtsDemoProps> = ({ className }) => {
   const [progress, setProgress] = useState<number>(0);
   const [price, setPrice] = useState<number>(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const visualizerRef = useRef<HTMLCanvasElement>(null);
+  const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  // Keyboard handler for textarea: Enter submits, Shift+Enter new line
+  const handleTextAreaKeyDown = (
+    e: React.KeyboardEvent<HTMLTextAreaElement>
+  ) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      // Find the form and submit
+      const form = e.currentTarget.closest("form");
+      if (form) {
+        form.requestSubmit();
+      }
+    }
+    // Otherwise allow default (including Shift+Enter)
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -315,10 +330,13 @@ const TtsDemo: FC<TtsDemoProps> = ({ className }) => {
         </div>
         <form className="mt-6 flex items-center gap-2" onSubmit={handleSubmit}>
           <Textarea
-            className="flex-1 resize-none min-h-[40px] max-h-[120px]"
+            ref={textAreaRef}
+            className="w-full min-h-16 max-h-40 resize-y rounded-lg border border-input bg-background px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:border-primary transition-colors placeholder:text-muted-foreground text-base shadow-xs"
             value={text}
             onChange={handleTextChange}
+            onKeyDown={handleTextAreaKeyDown}
             placeholder="Enter your message..."
+            aria-label="Text to synthesize"
             maxLength={4096}
             required
             rows={2}
