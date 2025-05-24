@@ -1,5 +1,19 @@
 {
 	"name": "app-playground",
+	"author": {
+		"name": "Aman Kumar",
+		"url": "https://amankumar.ai",
+		"github": "https://github.com/onlyoneaman"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/onlyoneaman/ttsplayground.git"
+	},
+	"homepage": "https://ttsplayground.com/",
+	"bugs": {
+		"url": "https://github.com/onlyoneaman/ttsplayground/issues"
+	},
+	"license": "MIT",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
