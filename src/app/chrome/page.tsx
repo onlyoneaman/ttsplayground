@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Play, Pause, Square, Volume2 } from 'lucide-react';
 
 export default function TextToSpeech() {
@@ -15,7 +15,7 @@ export default function TextToSpeech() {
   const [autoPlay, setAutoPlay] = useState(true);
 
   // Check if speech synthesis is supported
-  const isSupported = 'speechSynthesis' in window;
+  const isSupported = typeof window !== 'undefined' && 'speechSynthesis' in window;
 
   // Load available voices
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function TextToSpeech() {
     };
   }, [isSupported]);
 
-  const speak = () => {
+  const speak = useCallback(() => {
     if (!isSupported || !text.trim()) return;
 
     // Cancel any ongoing speech
@@ -85,7 +85,7 @@ export default function TextToSpeech() {
     };
 
     speechSynthesis.speak(utterance);
-  };
+  }, [isSupported, text, voices, selectedVoice, rate, pitch, volume]);
 
   const pause = () => {
     if (speechSynthesis.speaking && !speechSynthesis.paused) {
@@ -116,7 +116,7 @@ export default function TextToSpeech() {
       
       return () => clearTimeout(timeoutId);
     }
-  }, [text, selectedVoice, rate, pitch, volume, autoPlay]);
+  }, [text, selectedVoice, rate, pitch, volume, autoPlay, isPlaying, speak]);
 
   if (!isSupported) {
     return (
@@ -129,7 +129,7 @@ export default function TextToSpeech() {
             Speech Synthesis Not Supported
           </h2>
           <p className="text-gray-600">
-            Your browser doesn't support the Web Speech API. Please try using Chrome, Edge, or Safari.
+            {`Your browser doesn't support the Web Speech API. Please try using Chrome, Edge, or Safari.`}
           </p>
         </div>
       </div>
@@ -326,7 +326,7 @@ export default function TextToSpeech() {
           <ul className="text-sm text-gray-600 space-y-1">
             <li>• Enter or paste your text in the text area above</li>
             <li>• Choose your preferred voice and adjust settings</li>
-            <li>• Click "Speak" to hear the text, or enable auto-play for immediate playback</li>
+            <li>{'• Click "Speak" to hear the text, or enable auto-play for immediate playback'}</li>
             <li>• Use pause/resume/stop controls to manage playback</li>
           </ul>
         </div>
